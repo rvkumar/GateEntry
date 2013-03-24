@@ -1,0 +1,49 @@
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_MATINWARD_D]    Script Date: 02/08/2013 17:56:41 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GE_MATINWARD_D]') AND type in (N'U'))
+DROP TABLE [dbo].[GE_MATINWARD_D]
+GO
+
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_MATINWARD_D]    Script Date: 02/08/2013 17:56:41 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[GE_MATINWARD_D](
+	[GI_NO] [int] NOT NULL,
+	[PO_NO] [nvarchar](10) NULL,
+	[PO_DATE] [datetime] NULL,
+	[ITEM_NO] [int] NOT NULL,
+	[MAT_TYPE_ID] [int] NOT NULL,
+	[ITEM_CODE] [nvarchar](18) NULL,
+	[ITEM_DESC] [nvarchar](50) NULL,
+	[UOM] [char](4) NULL,
+	[NO_OF_CASES] [int] NULL,
+	[QTY] [numeric](10, 3) NULL,
+	[QTY_RCVD] [numeric](10, 3) NULL,
+	[CREATED_BY] [nvarchar](35) NULL,
+	[CREATED_DATE] [datetime] NULL,
+	[MODIFIED_BY] [nvarchar](35) NULL,
+	[MODIFIED_DATE] [datetime] NULL,
+	[DELETED_BY] [nvarchar](35) NULL,
+	[DELETED_DATE] [datetime] NULL,
+	[DELETED_FLAG] [bit] NULL,
+	[DELETED_REASON] [nvarchar](100) NOT NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

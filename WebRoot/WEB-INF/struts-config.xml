@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="loginForm" type="com.microlabs.form.LoginForm" />
+    <form-bean name="homeForm" type="com.microlabs.form.HomeForm" />
+    <form-bean name="visitorsForm" type="com.microlabs.form.VisitorsForm" />    
+    <form-bean name="matinwardForm" type="com.microlabs.form.MatinwardForm" />
+    <form-bean name="othmatoutForm" type="com.microlabs.form.OthmatoutForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+
+    <action
+		attribute="loginForm"
+		input="/jsp/login.jsp"
+      	name="loginForm"
+		parameter="method"
+		path="/login"
+		scope="request"
+		type="com.microlabs.action.LoginAction" >
+		<forward name="home" path="/jsp/home.jsp"></forward>
+		<forward name="logout" path="/jsp/login.jsp"></forward>
+	  <forward name="homehelp" path="/jsp/homehelp.jsp"></forward>
+	</action>
+
+    <action
+      attribute="homeForm"
+      input="/jsp/home.jsp"
+      name="homeForm"
+      parameter="method"
+      path="/home"
+      scope="request"
+      type="com.microlabs.action.HomeAction">
+      <forward name="home" path="/jsp/home.jsp" />
+      
+      
+      
+    </action>
+    
+    <action
+      attribute="visitorsForm"
+      input="/jsp/visitoradd.jsp"
+      name="visitorsForm"
+      parameter="method"
+      path="/visitors"
+      scope="request"
+      type="com.microlabs.action.VisitorsAction">
+      <forward name="display" path="/jsp/visitoradd.jsp" />
+      <forward name="displayvisitors" path="/jsp/home.jsp" />
+      <forward name="viewvisitor" path="/jsp/viewvisitor.jsp" />
+      <forward name="visitorList" path="/jsp/visitorList.jsp" />
+      
+      
+    </action>
+
+    <action
+      attribute="matinwardForm"
+      input="/jsp/matinward.jsp"
+      name="matinwardForm"
+      parameter="method"
+      path="/matinward"
+      scope="request"
+      type="com.microlabs.action.MatinwardAction">
+      <forward name="home" path="/jsp/home.jsp" />
+      <forward name="display" path="/jsp/matinward.jsp" />
+       
+    </action>
+    
+
+    <action
+      attribute="othmatoutForm"
+      input="/jsp/othermatoutward.jsp"
+      name="othmatoutForm"
+      parameter="method"
+      path="/othermatoutward"
+      scope="request"
+      type="com.microlabs.action.OthmatoutAction">
+      <forward name="home" path="/jsp/home.jsp" />
+      <forward name="display" path="/jsp/othermatoutward.jsp" />
+       
+    </action>
+
+
+  </action-mappings>
+
+  <message-resources parameter="com.yourcompany.struts.ApplicationResources" />
+</struts-config>
+

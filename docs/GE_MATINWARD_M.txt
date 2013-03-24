@@ -1,0 +1,50 @@
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_MATINWARD_M]    Script Date: 02/08/2013 17:57:47 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GE_MATINWARD_M]') AND type in (N'U'))
+DROP TABLE [dbo].[GE_MATINWARD_M]
+GO
+
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_MATINWARD_M]    Script Date: 02/08/2013 17:57:48 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[GE_MATINWARD_M](
+	[MANDT] [char](3) NOT NULL,
+	[FIN_YEAR] [char](7) NOT NULL,
+	[LOCATION_ID] [char](4) NOT NULL,
+	[GATE_NO] [char](2) NOT NULL,
+	[GI_NO] [int] NOT NULL,
+	[GI_DATE] [datetime] NOT NULL,
+	[TIME_IN] [char](10) NOT NULL,
+	[DOC_NO] [nvarchar](20) NULL,
+	[DOC_DATE] [datetime] NULL,
+	[SUPPLIER_NAME] [nvarchar](35) NULL,
+	[SUPPLIER_PLACE] [nvarchar](35) NULL,
+	[VEHICLE_NO] [nvarchar](35) NULL,
+	[DRIVER_NAME] [nvarchar](35) NULL,
+	[TRANSPORTER_NAME] [nvarchar](35) NULL,
+	[ENTERED_BY] [nvarchar](35) NULL,
+	[REASON_REMARKS] [nvarchar](150) NULL,
+ CONSTRAINT [PK_GE_MATINWARD_M_1] PRIMARY KEY CLUSTERED 
+(
+	[GI_NO] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

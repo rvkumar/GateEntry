@@ -1,0 +1,31 @@
+
+1. MSSQL Driver for Java 
+2. commons-dbcp
+3. commons-pool
+4. commons-util
+`
+Struts + Hibernate - MVC
+Spring + Hibernate - MVC + Advance Framework + Security + IOC + AOP
+
+
+Location
+
+ID - L1
+NAME - Location 1
+FLAG - N
+
+According - Last Opened Item
+
+
+<HTTP-EQUI REFRESH VALUE="5">
+
+self.refresh();
+window.refresh();
+
+
+<div id="visitor"></div>
+document.elementById("visitor").frame.refresh();
+
+
+<iframe id="visitor" src="listVisitors.do"></iframe>
+document.getElementById("visitor").refresh();

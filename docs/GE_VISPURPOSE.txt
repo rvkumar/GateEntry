@@ -1,0 +1,26 @@
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_VISPURPOSE]    Script Date: 02/07/2013 19:29:38 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GE_VISPURPOSE]') AND type in (N'U'))
+DROP TABLE [dbo].[GE_VISPURPOSE]
+GO
+
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_VISPURPOSE]    Script Date: 02/07/2013 19:29:38 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[GE_VISPURPOSE](
+	[VIS_PURPOSE_ID] [int] NOT NULL,
+	[VIS_PURPOSE_NAME] [nvarchar](35) NOT NULL
+) ON [PRIMARY]
+
+GO
+
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="VisitorsDaily" language="groovy" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     *,
+     E."LOCATION_NM" AS E_LOCATION_NM,
+     A."VISITOR_NAME" AS A_VISITOR_NAME,
+     A."COMPANY" AS A_COMPANY,
+     A."PLACE" AS A_PLACE,
+     A."CONTACT_NO" AS A_CONTACT_NO,
+     C."VIS_TYPE_NAME" AS C_VIS_TYPE_NAME,
+     B."VIS_PURPOSE_NAME" AS B_VIS_PURPOSE_NAME,
+     A."TO_MEET" AS A_TO_MEET,
+     D."DEPT_NM" AS D_DEPT_NM,
+     A."TIME_IN" AS A_TIME_IN,
+     A."TIME_OUT" AS A_TIME_OUT
+FROM
+     "GE_VISITORS" A INNER JOIN "GE_VISPURPOSE" B ON A."VIS_PURPOSE_ID" = B."VIS_PURPOSE_ID"
+     INNER JOIN "GE_VISTYPE" C ON A."VIS_TYPE_ID" = C."VIS_TYPE_ID"
+     INNER JOIN "GE_DEPT" D ON A."DEPT_ID" = D."DEPT_ID"
+     INNER JOIN "GE_LOCATION" E ON A."LOCATION_ID" = E."LOCATION_ID"
+WHERE
+     a.LOCATION_ID = 'ML00']]>
+	</queryString>
+	<field name="E_LOCATION_NM" class="java.lang.String"/>
+	<field name="A_VISITOR_NAME" class="java.lang.String"/>
+	<field name="A_COMPANY" class="java.lang.String"/>
+	<field name="A_PLACE" class="java.lang.String"/>
+	<field name="A_CONTACT_NO" class="java.lang.String"/>
+	<field name="C_VIS_TYPE_NAME" class="java.lang.String"/>
+	<field name="B_VIS_PURPOSE_NAME" class="java.lang.String"/>
+	<field name="A_TO_MEET" class="java.lang.String"/>
+	<field name="D_DEPT_NM" class="java.lang.String"/>
+	<field name="A_TIME_IN" class="java.lang.String"/>
+	<field name="A_TIME_OUT" class="java.sql.Timestamp"/>
+	<group name="E_LOCATION_NM">
+		<groupExpression><![CDATA[$F{E_LOCATION_NM}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="49" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="37" splitType="Stretch">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="43" y="7" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{A_VISITOR_NAME}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

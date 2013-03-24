@@ -1,0 +1,36 @@
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_LOCATION]    Script Date: 02/07/2013 19:28:05 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GE_LOCATION]') AND type in (N'U'))
+DROP TABLE [dbo].[GE_LOCATION]
+GO
+
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_LOCATION]    Script Date: 02/07/2013 19:28:05 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[GE_LOCATION](
+	[LOCATION_ID] [varchar](5) NOT NULL,
+	[LOCATION_NM] [varchar](20) NOT NULL,
+	[CREATED_BY] [varchar](20) NOT NULL,
+	[CREATED_DATE] [datetime] NOT NULL,
+	[MODIFIED_BY] [varchar](20) NULL,
+	[MODIFIED_DATE] [datetime] NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

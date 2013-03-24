@@ -1,0 +1,30 @@
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_DEPT]    Script Date: 02/07/2013 19:27:06 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GE_DEPT]') AND type in (N'U'))
+DROP TABLE [dbo].[GE_DEPT]
+GO
+
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_DEPT]    Script Date: 02/07/2013 19:27:06 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[GE_DEPT](
+	[DEPT_ID] [int] NOT NULL,
+	[DEPT_NM] [nvarchar](35) NOT NULL,
+	[CREATED_BY] [nvarchar](35) NOT NULL,
+	[CREATED_DATE] [datetime] NOT NULL,
+	[MODIFIED_BY] [nvarchar](35) NULL,
+	[MODIFIED_DATE] [datetime] NULL
+) ON [PRIMARY]
+
+GO
+
+

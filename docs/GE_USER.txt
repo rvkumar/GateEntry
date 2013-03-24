@@ -1,0 +1,34 @@
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_USER]    Script Date: 02/07/2013 19:28:35 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GE_USER]') AND type in (N'U'))
+DROP TABLE [dbo].[GE_USER]
+GO
+
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_USER]    Script Date: 02/07/2013 19:28:35 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[GE_USER](
+	[USER_ID] [int] NOT NULL,
+	[USER_EMPNO] [int] NOT NULL,
+	[USER_NAME] [nvarchar](20) NOT NULL,
+	[PASSWORD] [nvarchar](20) NOT NULL,
+	[EMAIL] [nvarchar](50) NOT NULL,
+	[CREATED_BY] [nvarchar](20) NOT NULL,
+	[CREATED_DATE] [datetime] NOT NULL,
+	[MODIFIED_BY] [nvarchar](20) NULL,
+	[MODIFIED_DATE] [datetime] NULL,
+	[LOCATION_ID] [nvarchar](5) NULL
+) ON [PRIMARY]
+
+GO
+
+

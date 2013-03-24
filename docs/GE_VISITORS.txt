@@ -1,0 +1,49 @@
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_VISITORS]    Script Date: 02/07/2013 19:29:00 ******/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[GE_VISITORS]') AND type in (N'U'))
+DROP TABLE [dbo].[GE_VISITORS]
+GO
+
+USE [ML_GE]
+GO
+
+/****** Object:  Table [dbo].[GE_VISITORS]    Script Date: 02/07/2013 19:29:00 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[GE_VISITORS](
+	[GATE_NO] [char](2) NOT NULL,
+	[FIN_YEAR] [char](7) NOT NULL,
+	[LOCATION_ID] [char](4) NOT NULL,
+	[VISITOR_NO] [int] NOT NULL,
+	[VIS_TYPE_ID] [int] NOT NULL,
+	[VIS_PURPOSE_ID] [int] NOT NULL,
+	[VISITOR_NAME] [nvarchar](35) NOT NULL,
+	[COMPANY] [nvarchar](35) NOT NULL,
+	[ADDRESS] [nvarchar](100) NULL,
+	[PLACE] [nvarchar](35) NOT NULL,
+	[CONTACT_NO] [nvarchar](20) NULL,
+	[BELONGINGS] [nvarchar](100) NULL,
+	[TO_MEET] [nvarchar](35) NOT NULL,
+	[DEPT_ID] [int] NULL,
+	[TIME_IN] [nvarchar](10) NOT NULL,
+	[TIME_OUT] [datetime] NULL,
+	[VISITOR_IMAGE] [nvarchar](max) NULL,
+	[CREATED_BY] [nvarchar](35) NOT NULL,
+	[CREATED_DATE] [datetime] NOT NULL
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
